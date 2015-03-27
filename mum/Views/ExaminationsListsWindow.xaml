@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:mum"
         mc:Ignorable="d"
-        Title="MainWindow" Height="500" Width="600">
+        Title="MainWindow">
 	<Grid>
 		<Grid.RowDefinitions>
 			<RowDefinition Height="*" />
@@ -14,8 +14,8 @@
 		<Grid.ColumnDefinitions>
 			<ColumnDefinition Width="*"/>
 		</Grid.ColumnDefinitions>
-		<DataGrid x:Name="examinationsListsDataGrid" RenderTransformOrigin="-2.167,-1.462" Margin="10"/>
-		<Button x:Name="addNewList" Content="Dodaj" Width="75" Click="OnAddNewList" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="10,0,0,10" Grid.Row="2" Height="20"/>
+		<DataGrid x:Name="ExaminationsListsDataGrid" IsReadOnly="True" Margin="10" GridLinesVisibility="Horizontal"/>
+		<Button x:Name="AddNewList" Content="Dodaj" Width="75" Click="OnAddNewList" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="10,0,0,10" Grid.Row="2" Height="20"/>
 
 	</Grid>
 </Window>
