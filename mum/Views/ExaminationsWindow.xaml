@@ -5,8 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:mum.Views"
         mc:Ignorable="d"
-        Title="ExaminationListWindow" Height="300" Width="300">
-    <Grid>
-        
-    </Grid>
+        Title="ExaminationListWindow" Height="414" Width="884">
+	<Grid>
+		<Label x:Name="OwnerLabel" Content="" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="150"/>
+		<Label x:Name="label" Content="Badania opisane w miesiącu:" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top" Width="184" FontWeight="Bold"/>
+		<Label x:Name="MonthLabel" Content="" HorizontalAlignment="Left" Margin="199,41,0,0" VerticalAlignment="Top" Width="75"/>
+		<Label x:Name="YearLabel" Content="" HorizontalAlignment="Left" Margin="290,41,0,0" VerticalAlignment="Top" Width="75"/>
+		<DataGrid x:Name="ExaminationsDataGrid" HorizontalAlignment="Left" Margin="10,72,0,0" VerticalAlignment="Top" Height="235" Width="630"/>
+		<Label x:Name="SumLabel" Content="Label" HorizontalAlignment="Left" Margin="560,41,0,0" VerticalAlignment="Top" Width="80"/>
+		<Label x:Name="label1" Content="Suma:" HorizontalAlignment="Left" Margin="480,41,0,0" VerticalAlignment="Top" Width="75" FontWeight="Bold"/>
+		<Button x:Name="SaveListButton" Content="Zapisz" HorizontalAlignment="Left" Margin="480,312,0,0" VerticalAlignment="Top" Width="160"/>
+		<Button x:Name="AddExaminationButton" Content="Dodaj Badanie" HorizontalAlignment="Left" Margin="10,312,0,0" VerticalAlignment="Top" Width="150"/>
+
+	</Grid>
 </Window>

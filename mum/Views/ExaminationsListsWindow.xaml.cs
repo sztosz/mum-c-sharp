@@ -21,19 +21,23 @@ namespace mum.Views
 		{
 			var addListWindow = new AddListWindow {Owner = this};
 			addListWindow.ShowDialog();
+			GetExaminationLists();
 		}
 		private void GetExaminationLists()
 		{
 			using (var context = new Context())
 			{
-				var query = context.ExaminationsLists;
-				var results = query.ToList();
-
-				Console.Write(results);
-
-				ExaminationsListsDataGrid.ItemsSource = results;
-
+				ExaminationsListsDataGrid.ItemsSource = context.ExaminationsLists.ToList(); 
 			}
+		}
+
+		private void OnMouseDoubleClick(object sender, System.Windows.Input.MouseButtonEventArgs e)
+		{
+			var examinationsList = ExaminationsListsDataGrid?.SelectedItem as ExaminationsList;
+			if (examinationsList == null) return;
+			var selectedListId = examinationsList.ExaminationsListId;
+			var examinationsListsWindow = new ExaminationListWindow(selectedListId) {Owner = this};
+			examinationsListsWindow.ShowDialog();
 		}
 	}
 }
