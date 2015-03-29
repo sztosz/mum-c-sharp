@@ -14,8 +14,24 @@
 		<Grid.ColumnDefinitions>
 			<ColumnDefinition Width="*"/>
 		</Grid.ColumnDefinitions>
-		<DataGrid x:Name="ExaminationsListsDataGrid" IsReadOnly="True" Margin="10" GridLinesVisibility="Horizontal"/>
-		<Button x:Name="AddNewList" Content="Dodaj" Width="75" Click="OnAddNewList" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="10,0,0,10" Grid.Row="2" Height="20"/>
+		<DataGrid x:Name="ExaminationsListsDataGrid"
+				  SelectionUnit="FullRow"
+				  CanUserResizeRows="False"
+				  CanUserResizeColumns="True"
+				  CanUserSortColumns="True"
+				  IsReadOnly="True"
+				  AutoGenerateColumns="False"
+				  Margin="10"
+				  GridLinesVisibility="Horizontal"
+				  AlternatingRowBackground="Gainsboro"
+				  AlternationCount="2">
+			<DataGrid.Columns>
+				<DataGridTextColumn Header="Rok" Binding="{Binding Year}"/>
+				<DataGridTextColumn Header="Miesiac" Binding="{Binding Month}"/>
+				<DataGridTextColumn Header="Lekarz" Binding="{Binding Owner}"/>	
+			</DataGrid.Columns>
+		</DataGrid>
+		<Button x:Name="AddNewList" Content="Dodaj" Width="75" Click="OnAddNewList" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="10,0,0,10" Grid.Row="1" Height="20"/>
 
 	</Grid>
 </Window>
