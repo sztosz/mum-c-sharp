@@ -52,5 +52,12 @@ namespace mum.Views
 				}
 			}
 		}
+
+		private void AddExaminationButton_Click(object sender, RoutedEventArgs e)
+		{
+			var addExaminationWindow = new AddExaminationWindow() { Owner = this };
+			addExaminationWindow.ShowDialog();
+			GetExaminations();
+		}
 	}
 }

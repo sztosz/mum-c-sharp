@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace mum.Views
 {
 	/// <summary>
-	/// Interaction logic for AddExamination.xaml
+	/// Interaction logic for AddExaminationWindow.xaml
 	/// </summary>
-	public partial class AddExamination : Window
+	public partial class AddExaminationWindow : Window
 	{
-		public AddExamination()
+		public AddExaminationWindow()
 		{
 			InitializeComponent();
 		}

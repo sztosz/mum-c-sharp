@@ -15,7 +15,7 @@
 		<Label x:Name="SumLabel" Content="Label" HorizontalAlignment="Left" Margin="560,41,0,0" VerticalAlignment="Top" Width="80"/>
 		<Label x:Name="label1" Content="Suma:" HorizontalAlignment="Left" Margin="480,41,0,0" VerticalAlignment="Top" Width="75" FontWeight="Bold"/>
 		<Button x:Name="SaveListButton" Content="Zapisz" HorizontalAlignment="Left" Margin="480,312,0,0" VerticalAlignment="Top" Width="160"/>
-		<Button x:Name="AddExaminationButton" Content="Dodaj Badanie" HorizontalAlignment="Left" Margin="10,312,0,0" VerticalAlignment="Top" Width="150"/>
+		<Button x:Name="AddExaminationButton" Content="Dodaj Badanie" HorizontalAlignment="Left" Margin="10,312,0,0" VerticalAlignment="Top" Width="150" Click="AddExaminationButton_Click"/>
 
 	</Grid>
 </Window>
