@@ -1,18 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity.Infrastructure;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using mum.Helpers;
 using mum.Models;
 
@@ -21,7 +8,7 @@ namespace mum.Views
 	/// <summary>
 	/// Interaction logic for AddListWindow.xaml
 	/// </summary>
-	public partial class AddListWindow : Window
+	public partial class AddListWindow
 	{
 		public AddListWindow()
 		{
@@ -31,10 +18,9 @@ namespace mum.Views
 
 		private void AddButton_Click(object sender, RoutedEventArgs e)
 		{
-			Months month = 0;
-			int year = 0;
-			string owner = null;
-			int rate = 0;
+			Months month;
+			int year;
+			int rate;
 			// Month validation
 			try
 			{
@@ -63,7 +49,7 @@ namespace mum.Views
 			}
 			
 			// Owner Validation
-			owner = OwnerTextBox.Text;
+			var owner = OwnerTextBox.Text;
 			if (string.IsNullOrEmpty(owner))
 			{
 				ErrorTextBlock.Text = "Proszę podać Imię i Nazwisko Lekarza";
@@ -77,23 +63,22 @@ namespace mum.Views
 			catch (FormatException)
 			{
 				ErrorTextBlock.Text = "Stawka musi się składać z samych cyfr";
+				return;
 			}
 			catch (OverflowException)
 			{
 				ErrorTextBlock.Text = "Podana stawka jest zbyt dużą liczbą";
+				return;
 			}
+
 			using (var context = new Context())
 			{
-				ExaminationsList examinationsList = new ExaminationsList();
-				examinationsList.Month = month;
-				examinationsList.Year = year;
-				examinationsList.Owner = owner;
-				examinationsList.Rate = rate;
+				var examinationsList = new ExaminationsList {Month = month, Year = year, Owner = owner, Rate = rate};
 
 				context.ExaminationsLists.Add(examinationsList);
 				context.SaveChanges();
 
-				this.Close();
+				Close();
 			}
 		}
 	}

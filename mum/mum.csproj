@@ -81,6 +81,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Helpers\Enums.cs" />
+    <Compile Include="Views\TypesOfExaminationsWindow.xaml.cs">
+      <DependentUpon>TypesOfExaminationsWindow.xaml</DependentUpon>
+    </Compile>
     <Page Include="Views\AddExaminationWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -96,6 +99,10 @@
     <Page Include="Views\ExaminationsListsWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\TypesOfExaminationsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>

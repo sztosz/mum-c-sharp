@@ -1,6 +1,6 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using System.Windows;
+using System.Windows.Input;
 using mum.Models;
 
 namespace mum.Views
@@ -31,7 +31,7 @@ namespace mum.Views
 			}
 		}
 
-		private void OnMouseDoubleClick(object sender, System.Windows.Input.MouseButtonEventArgs e)
+		private void OnMouseDoubleClick(object sender, MouseButtonEventArgs e)
 		{
 			var examinationsList = ExaminationsListsDataGrid?.SelectedItem as ExaminationsList;
 			if (examinationsList == null) return;

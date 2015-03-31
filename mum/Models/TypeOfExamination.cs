@@ -8,6 +8,6 @@ namespace mum.Models
 		public int TypeOfExaminationId { get; set; }
 		public string Name { get; set; }
 
-		public IList Examinations { get; set; }
+		public IList<Examination> Examinations { get; set; }
 	}
 }
