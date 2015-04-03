@@ -34,6 +34,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>mum.App</StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
@@ -64,6 +67,8 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Models\Context.cs" />
+    <Compile Include="Properties\Annotations.cs" />
+    <Compile Include="ViewModels\TypesOfExaminationViewModel.cs" />
     <Compile Include="Views\AddExaminationWindow.xaml.cs">
       <DependentUpon>AddExaminationWindow.xaml</DependentUpon>
     </Compile>
@@ -81,8 +86,8 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Helpers\Enums.cs" />
-    <Compile Include="Views\TypesOfExaminationsWindow.xaml.cs">
-      <DependentUpon>TypesOfExaminationsWindow.xaml</DependentUpon>
+    <Compile Include="Views\TypesOfExaminationWindow.xaml.cs">
+      <DependentUpon>TypesOfExaminationWindow.xaml</DependentUpon>
     </Compile>
     <Page Include="Views\AddExaminationWindow.xaml">
       <SubType>Designer</SubType>
@@ -100,7 +105,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Views\TypesOfExaminationsWindow.xaml">
+    <Page Include="Views\TypesOfExaminationWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

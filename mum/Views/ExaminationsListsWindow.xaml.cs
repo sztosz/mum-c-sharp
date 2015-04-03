@@ -33,7 +33,7 @@ namespace mum.Views
 
 		private void OnMouseDoubleClick(object sender, MouseButtonEventArgs e)
 		{
-			var examinationsList = ExaminationsListsDataGrid?.SelectedItem as ExaminationsList;
+			var examinationsList = ExaminationsListsDataGrid.SelectedItem as ExaminationsList;
 			if (examinationsList == null) return;
 			var selectedListId = examinationsList.ExaminationsListId;
 			var examinationsListsWindow = new ExaminationListWindow(selectedListId) {Owner = this};

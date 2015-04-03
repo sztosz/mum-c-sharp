@@ -14,7 +14,7 @@ namespace mum.Views
 
 		private void ExaminationTypeButton_Click(object sender, RoutedEventArgs e)
 		{
-			var typesOfExaminationsWindow = new TypesOfExaminationsWindow() { Owner = this };
+			var typesOfExaminationsWindow = new TypesOfExaminationWindow() { Owner = this };
 			typesOfExaminationsWindow.ShowDialog();
 		}
 	}
