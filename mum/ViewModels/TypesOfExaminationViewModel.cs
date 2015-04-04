@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using mum.Models;
+using System.Windows.Controls;
 
 namespace mum.ViewModels
 {
@@ -39,13 +40,6 @@ namespace mum.ViewModels
                     AddTypeOfExaminationToDatabase(item);
                 }
             }
-            if (args.Action.Equals(NotifyCollectionChangedAction.Replace))
-            {
-                foreach (TypeOfExamination item in args.OldItems)
-                {
-                    ChangeTypeOfExaminationInDatabse(item);
-                }
-            }
         }
 
         private void AddTypeOfExaminationToDatabase(TypeOfExamination item)
@@ -57,14 +51,25 @@ namespace mum.ViewModels
             }
         }
 
-        private void ChangeTypeOfExaminationInDatabse(TypeOfExamination item)
+        public void ChangeTypeOfExaminationInDatabse(TextBox item)
         {
+            TypeOfExamination typeOfExamination;
+            try
+            {
+                typeOfExamination = (TypeOfExamination)item.DataContext;
+            }
+            catch (InvalidCastException)
+            {
+                throw;
+            }
+
             using (var context = new Context())
             {
-                context.TypeOfExaminations.Add(item);
-                context.Entry(item).State = EntityState.Modified;
+                context.TypeOfExaminations.Add(typeOfExamination);
+                context.Entry(typeOfExamination).State = EntityState.Modified;
                 context.SaveChanges();
             }
+
         }
     }
 }

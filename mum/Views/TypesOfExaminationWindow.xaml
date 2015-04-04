@@ -25,11 +25,11 @@
                   CanUserAddRows="False"
                   GridLinesVisibility="Horizontal"
                   CanUserSortColumns="True"
-                  AutoGenerateColumns="False"
+                  AutoGenerateColumns="False" SourceUpdated="TypesOfExaminationsDataGrid_SourceUpdated"
                   >
                     
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Typ badania" Binding="{Binding Name, UpdateSourceTrigger=LostFocus}"/>
+                <DataGridTextColumn Header="Typ badania" Binding="{Binding Name, Mode=TwoWay, NotifyOnSourceUpdated=True, UpdateSourceTrigger=LostFocus}"/>
             </DataGrid.Columns>
         </DataGrid>
         <TextBox Grid.Row="1"

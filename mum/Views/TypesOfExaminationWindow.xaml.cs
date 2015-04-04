@@ -14,19 +14,24 @@ namespace mum.Views
     /// </summary>
     public partial class TypesOfExaminationWindow : Window
     {
-        private ObservableCollection<TypeOfExamination> _typesOfExaminationvViewModel;
+        private TypesOfExaminationViewModel _viewModel;
 
         public TypesOfExaminationWindow()
         {
             InitializeComponent();
-            _typesOfExaminationvViewModel = new TypesOfExaminationViewModel().TypesOfExamination;
-            TypesOfExaminationsDataGrid.ItemsSource = _typesOfExaminationvViewModel;
+            _viewModel = new TypesOfExaminationViewModel();
+            TypesOfExaminationsDataGrid.ItemsSource = _viewModel.TypesOfExamination;
             
         }
 
         private void AddNewTypeButton_Click(object sender, RoutedEventArgs e)
         {
-            _typesOfExaminationvViewModel.Add(new TypeOfExamination {Name = NewTypeTextBox.Text });
+            _viewModel.TypesOfExamination.Add(new TypeOfExamination {Name = NewTypeTextBox.Text });
+        }
+
+        private void TypesOfExaminationsDataGrid_SourceUpdated(object sender, System.Windows.Data.DataTransferEventArgs e)
+        {
+            _viewModel.ChangeTypeOfExaminationInDatabse((TextBox)e.TargetObject);
         }
     }
 }
